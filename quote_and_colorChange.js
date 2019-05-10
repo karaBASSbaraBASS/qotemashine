@@ -10,20 +10,21 @@ var currentAuthor = '';
  // log in using "X-Mashape-Key"
  // chose widget "random-famous-quotes"
   $.ajax({
-    
+    url: "https://andruxnet-random-famous-quotes.p.mashape.com/",
     headers: {
-      "X-Mashape-Key": "i4enGpB10Dmsh5hwBBxeUIqa8M8Mp1i9hLejsneKK8ZmUubqrB",
-      Accept: "application/json",
+      "X-Mashape-Key": "f6BF6Cgiz3mshky0UAk3hLtznYP4p1Fn3UUjsnanA1TjSUPOTu",
+      "X-RapidAPI-Host": "andruxnet-random-famous-quotes.p.rapidapi.com",
       "Content-Type": "application/x-www-form-urlencoded"
     }, // header close
-    url: "https://andruxnet-random-famous-quotes.p.mashape.com/",  
+    
 // if login sucsess - parse quote and autor name
     success: function(response){   
-    var resp = JSON.parse(response);
-    currentQuote = resp.quote;
-    currentAuthor = resp.author; 
+      
+      var resp = response[0];
+      currentQuote = resp.quote;
+      currentAuthor = resp.author; 
   
-  //$('#new-quote').on('click', generate_quote ());
+//$('#new-quote').on('click', generate_quote ());
 // in this case gonna be link creating script    
     var qurl = resp.quote.replace(/[ /]/g,'%20');
     var aurl = resp.author.replace(/[ /]/g,'%20'); 
@@ -32,9 +33,9 @@ var currentAuthor = '';
   });
       
  //--------don't figure out how to create "tumblr post"     
-  $('#tumblr-quote').on('click', function() {
-    window.open("https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&title=Quote%20Machine&content=" + qurl + "&caption=" + aurl);
-  });
+  // $('#tumblr-quote').on('click', function() {
+  //   window.open("https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&title=Quote%20Machine&content=" + qurl + "&caption=" + aurl);
+  // });
 //---------don't figure out how to create "tumblr post" 
       
 // fade qote block in 500ms   
