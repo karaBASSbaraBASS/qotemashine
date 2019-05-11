@@ -11,7 +11,7 @@
          
 </head>
  <!-- generete first quote when page will be loaded --> 
-<body onload = "generate_quote ()">
+<body onload = "generate_quote()">
   
  <div id="aphorism_block">
   <div id="aphorism">
@@ -22,9 +22,12 @@
     </div>
     
    <div id="buttoms-blok">
-    <a class="button" id="tweet-quote" title="Tweet this qote!"  target="_blank"><img src="http://i.piccy.info/i9/1ae5e37ac4fc6108d44be8eeba4981ec/1472750702/413/1066157/Ptytsa_tvyt_twitter_2.png"></img></a>
-       
-     <a class="button" id="new-quote" title="Generate new qote!" onclick= "generate_quote ()" ><b>New qote</a>
+      <a class="button" id="tweet-quote" title="Tweet this qote!" onclick="openTweet()" target="_blank">
+        <img src="http://i.piccy.info/i9/1ae5e37ac4fc6108d44be8eeba4981ec/1472750702/413/1066157/Ptytsa_tvyt_twitter_2.png"></img>
+      </a>
+      <a class="button" id="new-quote" title="Generate new qote!" onclick= "generate_quote()" >
+        <b>New qote</b>
+      </a>
     </div>
   </div>
   
